@@ -17,6 +17,8 @@ class JogoController {
       return res.status(400).json({ error: 'This game already exists.' });
     }
 
+    console.log(jogoExists);
+
     const { number } = await Jogo.create(req.body);
 
     return res.json({
@@ -24,10 +26,10 @@ class JogoController {
     });
   }
 
-   index(req, res) {
-    // const jogos = await Jogo.findAll();
+    async index(req, res) {
+    const jogos = await Jogo.findAll();
 
-    return res.send('ok');
+    return res.send(jogos);
   }
 };
 

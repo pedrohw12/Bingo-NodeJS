@@ -4,7 +4,7 @@ class Jogo extends Model {
   static init(sequelize) {
     super.init(
       {
-        numero: Sequelize.INTEGER,
+        number: Sequelize.INTEGER,
       },
       {
         sequelize,
